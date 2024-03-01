@@ -90,13 +90,13 @@ Las celdas son enumeradas comenzando por 1, de izquierda a derecha y en cada col
 
 # Ejemplo
 
-$
+$$
 \begin{bmatrix}
 1 & 4 & 7 & 10 & 13 \\
 2 & 5 & 8 & 11 & 14 \\
 3 & 6 & 9 & 12 & 15 \\
 \end{bmatrix}
-$
+$$
 
 La matriz anterior tiene 3 filas y 5 columnas.
 
