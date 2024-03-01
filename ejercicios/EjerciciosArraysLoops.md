@@ -135,22 +135,22 @@ El primer caso de prueba tiene 1 fila, 1 columna y el número de celda a buscar 
 
 Veamos el ejemplo de la matriz de 3x5 elementos:
 
-$
+$$
 \begin{bmatrix}
 1 & 4 & 7 & 10 & 13 \\
 2 & 5 & 8 & \textcolor{red}{11} & 14 \\
 3 & 6 & 9 & 12 & 15 \\
 \end{bmatrix}
-$
+$$
 
 Nuestro objetivo es averiguar cual seria el valor de la celda 11 en la enumeración por filas. Si dibujamos la enumeracion por filas de la matriz anterior, obtendremos:
 
-$
+$$
 \begin{bmatrix}
 1 & 2 & 3 & 4 & 5 \\
 6 & 7 & 8 & \textcolor{red}{9} & 10 \\
 11 & 12 & 13 & 14 & 15 \\
 \end{bmatrix}
-$
+$$
 
 Podemos observar que es el número 9, tal como se muestra en el output.
