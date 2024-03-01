@@ -106,13 +106,13 @@ Las celdas son enumeradas comenzando por 1, de arriba hacía abajo y en cada fil
 
 # Ejemplo
 
-$
+$`
 \begin{bmatrix}
 1 & 2 & 3 & 4 & 5 \\
 6 & 7 & 8 & 9 & 10 \\
 11 & 12 & 13 & 14 & 15 \\
 \end{bmatrix}
-$
+`$
 
 Tu objetivo es encontrar el valor de la celda `a` en la enumeración por filas.
 
