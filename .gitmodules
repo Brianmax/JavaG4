@@ -1,3 +1,9 @@
 [submodule "semana1/semana1/miercoles"]
 	path = semana1/miercoles
 	url = git@github.com:Brianmax/variablesJava.git
+[submodule "semana1/viernes"]
+	path = semana1/viernes
+	url = git@github.com:Brianmax/condicionale.git
+[submodule "semana1/sabado"]
+	path = semana1/sabado
+	url = git@github.com:Brianmax/repasoSabado.git
