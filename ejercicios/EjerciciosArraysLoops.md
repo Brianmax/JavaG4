@@ -6,50 +6,86 @@ Imprimir los numeros del 1 al 100.
 
 Imprimir los numeros del 100 al 1.
 
-# Ejericio 3
+# Ejercicio 3
 
 Imprimir los numeros pares del 1 al 100.
 
-# Ejericio 4
+# Ejercicio 4
 
 Imprimir los numeros impares del 1 al 100.
 
-# Ejericio 5
+# Ejercicio 5
 
 Imprimir los numeros del 1 al 100, excepto los multiplos de 3.
 
-# Ejericio 6
+# Ejercicio 6
 
 Imprimir los numeros del 1 al 100, excepto los multiplos de 3 y 5.
 
-# Ejericio 7
+# Ejercicio 7
 
 Declarar un arreglo de 10 elementos e imprimir sus valores.
 
-# Ejericio 8
+# Ejercicio 8
 
 Declarar un arreglo de 10 elementos e imprimir sus valores en orden inverso.
 
-# Ejericio 9
+# Ejercicio 9
 
 Declarar un arreglo de 10 elementos e imprimir la suma de sus valores.
 
-# Ejericio 10
+# Ejercicio 10
 
 Declarar un arreglo de `n` elementos y buscar el mayor valor.
 
-# Ejericio 11
+# Ejercicio 11
 
 Declarar un arreglo de `n` elementos y buscar un valor `x` en el arreglo. En caso de encontrarlo, imprimir su posición, en caso de no encontrarlo, imprimir "No encontrado".
 
-# Ejericio 12
+# Ejercicio 12
+Crea un programa que cuente cuántas veces aparece una letra específica en una cadena.
+
+## Input
+```
+Java es un lenguaje de programacion
+a
+```
+## Output
+```
+5
+```
+
+## Ejercicio 13
+
+Crea un programa que imprima la tabla de multiplicar del 1 al 10.
+
+## Ejemplo de output
+```
+Tabla de multiplicación del 1:
+1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+...
+1 x 10 = 10
+
+Tabla de multiplicación del 2:
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+...
+2 x 10 = 20
+
+...
+```
+
+# Ejercicio 14
 
 Dado un número entero `n`, realizar las siguientes operaciones:
 - Si `n` es par, dividirlo entre 2.
 - Si `n` es impar, multiplicarlo por 3 y sumar 1.
 Repetir el proceso hasta que `n` sea 1.
 
-# Ejericio 13
+# Ejercicio 15
 
 Como objetivo este año, te propones leer la mayor cantidad de libros posibles. Hoy, tienes `t` minutos para leer. Tomas `n` libros de la biblioteca, cada uno con un tiempo de lectura $a_{i}$. ¿Cuál es la mayor cantidad de libros que puedes leer en `t` minutos?
 
@@ -60,7 +96,7 @@ Como objetivo este año, te propones leer la mayor cantidad de libros posibles. 
 ```
 La primera linea contiene dos enteros `n` y `t` que representan el número de libros y el tiempo que tienes para leer. La segunda linea contiene `n` enteros $a_{i}$ que representan el tiempo de lectura de cada libro.
 
-# Ejericio 14
+# Ejercicio 16
 
 Basado en el ejercicio anterior, ahora debes de seguir la siguiente regla: El orden de los libros no puede ser alterado. Es decir, si tomas el libro `i`, debes de leerlo antes que el libro `i+1`. Además, una vez que lees un libro, lo leerás completo. ¿Cuál es la mayor cantidad de libros que puedes leer en `t` minutos?
 Con el objetivo de maximizar la cantidad de libros que puedes leer, puedes empezar a leer desde cualquier libro. Solo ten en cuenta que después de escoger un libro debes de leer los siguientes libros en orden.
@@ -77,11 +113,11 @@ Con el objetivo de maximizar la cantidad de libros que puedes leer, puedes empez
 
 Tenemos 4 minutos y 4 libros por leer. Si empezamos a leer desde el primer libro que tiene un tiempo de 3 minutos, nos quedaran 1 minuto para leer el siguiente libro, por lo que solo podremos leer 2 libros en total. Si empezamos a leer desde el segundo libro que tiene un tiempo de 1 minuto, nos quedaran 3 minutos para leer el siguiente libro, al leer el libro 3 que tiene un tiempo de 2 minutos, nos quedaran 1 minuto para leer el siguiente libro, por lo que podremos leer 3 libros en total.
 
-# Ejercicio 15
+# Ejercicio 17
 
 Dada una matriz de `n` x `m` elementos. Debes de encontrar el valor máximo de la matriz.
 
-# Ejercicio 16
+# Ejercicio 18
 
 Encuentras una matriz de `n` x `m` elementos. Cada elemento de la matriz es un número entero positivo uno consecutivo del anterior. De acuerdo a la forma en que se encuentran los elementos tendremos dos tipos de enumeración:
 ## Enumeracion por columnas
