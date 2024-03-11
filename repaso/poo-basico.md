@@ -99,6 +99,15 @@ public class Calculator {
     int divide(int a, int b) {
         return a / b;
     }
+    int factorial(int a)
+    {
+        int respuesta = 1;
+        for(int i=a; i>=0; i++)
+        {
+            respuesta = respuesta * i;
+        }
+        return respuesta;
+    }
 }
 ```
 
