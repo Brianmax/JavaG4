@@ -13,6 +13,3 @@
 [submodule "semana2/miercoles"]
 	path = semana2/miercoles
 	url = git@github.com:Brianmax/poo.git
-[submodule "semana2/viernes"]
-	path = semana2/viernes
-	url = git@github.com:Brianmax/poo-java.git
