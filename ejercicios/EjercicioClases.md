@@ -295,8 +295,6 @@ El objetivo de este ejercicio es desarrollar un sistema de matrículas para una 
 - **Descripción**: Clase base para representar a todos los usuarios.
 - **Atributos**:
   - `nombre`: Nombre de la persona.
-- **Métodos**:
-  - Implementación de los métodos de la interfaz `Usuario`.
 
 La forma en la que un usuario se loguea depende de su tipo, por lo que se debe implementar el método `iniciarSesion` de manera diferente en cada subclase.
 
