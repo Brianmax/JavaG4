@@ -27,3 +27,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+./semana3/viernes/code.py
+./semana3/viernes/consultas.sql
+./semana3/viernes/consultas2.sql
+./semana3/viernes/consultasClase.sql
