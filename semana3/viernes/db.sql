@@ -52,7 +52,7 @@ create table if not exists pilotos(
 	apellido varchar(100),
 	estado boolean
 );
-create table if not exists vuelo_piloto()
+create table if not exists vuelo_piloto();
 
 
 alter table boletos add column id_pasajero_fk integer;
