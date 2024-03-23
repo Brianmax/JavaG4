@@ -1,0 +1,173 @@
+use("viernesMongo")
+db.universidad.find();
+
+use("viernesMongo")
+db.universidad.find(
+    {
+        nombre: "PUCP"
+    }
+);
+
+// operador gt: greater than
+// operador lt: less than
+// operador gte: greter than or equal
+// operador lte: less than or equal
+
+use("viernesMongo")
+db.universidad.find(
+    {
+        alumnos : {
+            $gt: 8000
+        }
+    }
+);
+
+use("viernesMongo")
+db.universidad.find(
+    {
+        alumnos: {
+            $lte: 7000
+        }
+    }
+)
+
+// accediendo a subdocumentos
+// equal $eq
+use("viernesMongo");
+db.universidad.find(
+    {
+        "direccion.region": "Arequpa"
+    }
+);
+
+// buscar universidades que sean de lima y que tengan mas de 8000 alumnos
+
+use("viernesMongo");
+db.universidad.find(
+    {
+        "direccion.region": "Lima",
+        alumnos: {
+            $gt: 8000
+        }
+    }
+);
+
+
+// buscar universidades que tengan de presupuesto mas de 700000 o que sean de Lima
+
+use("viernesMongo")
+db.universidad.find();
+
+use("viernesMongo")
+db.universidad.find(
+    {
+        nombre: "PUCP"
+    }
+);
+
+// operador gt: greater than
+// operador lt: less than
+// operador gte: greter than or equal
+// operador lte: less than or equal
+
+use("viernesMongo")
+db.universidad.find(
+    {
+        alumnos : {
+            $gt: 8000
+        }
+    }
+);
+
+use("viernesMongo")
+db.universidad.find(
+    {
+        alumnos: {
+            $lte: 7000
+        }
+    }
+)
+
+// accediendo a subdocumentos
+// equal $eq
+use("viernesMongo");
+db.universidad.find(
+    {
+        "direccion.region": "Arequpa"
+    }
+);
+
+// buscar universidades que sean de lima o que tengan mas de 8000 alumnos
+
+use("viernesMongo");
+db.universidad.find(
+    {
+        $ :[
+            {
+                "direccion.region": "Lima"
+            },
+            {
+                alumnos: 
+                {
+                    $gt: 8000
+                }
+            }
+        ]
+    }
+);
+
+use("viernesMongo")
+db.universidad.find();
+
+use("viernesMongo")
+db.universidad.find(
+    {
+        nombre: "PUCP"
+    }
+);
+
+// operador gt: greater than
+// operador lt: less than
+// operador gte: greter than or equal
+// operador lte: less than or equal
+
+use("viernesMongo")
+db.universidad.find(
+    {
+        alumnos : {
+            $gt: 8000
+        }
+    }
+);
+
+use("viernesMongo")
+db.universidad.find(
+    {
+        alumnos: {
+            $lte: 7000
+        }
+    }
+)
+
+// accediendo a subdocumentos
+// equal $eq
+use("viernesMongo");
+db.universidad.find(
+    {
+        "direccion.region": "Arequpa"
+    }
+);
+
+// buscar universidades que sean de lima y que tengan mas de 8000 alumnos
+
+use("viernesMongo");
+db.universidad.find(
+    {
+        "direccion.region":{
+            $not :
+            {
+                $eq: "Lima"
+            }
+        }
+    }
+);

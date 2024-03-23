@@ -1,0 +1,34 @@
+use("viernesMongo");
+// all
+db.universidad.find(
+    {
+        carreras: {
+            $all: ["Ing Mecanica", "Derecho"]
+        }
+    }
+);
+
+use("viernesMongo");
+db.universidad.find();
+
+// size
+// traer las universidades con tres carreras
+use("viernesMongo");
+db.universidad.find(
+    {
+        carreras: 
+        {
+            $size: 3
+        }
+    }
+);
+
+use("viernesMongo")
+db.universidad.find(
+    {
+        carreras:{
+            $gt:
+        }
+    }
+)
+// traer las universidades con mas de tres carreras size, gt

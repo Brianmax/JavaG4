@@ -1,0 +1,131 @@
+use("viernesMongo");
+
+db.createCollection("usuarios");
+
+
+use("viernesMongo");
+db.usuarios.insertOne(
+    {
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "edad": 39,
+        "email": "juan@gmail.com"
+    }
+);
+
+use("viernesMongo");
+db.usuarios.find();
+
+use("viernesMongo");
+db.usuarios.insertMany(
+    [
+        {
+            "nombre": "Jose",
+            "apellido": "Guzman",
+            "edad": 38,
+            "email": "jose@gmail.com"
+        },
+        {
+            "nombre": "Pedro",
+            "apellido": "Gomez",
+            "edad": 28,
+            "email": "pedro@gmail.com"
+        },
+        {
+            "nombre": "Rafael",
+            "apellido": "David",
+            "edad": 24,
+            "email": "rafa@gmail.com"
+        }
+    ]
+)
+
+
+use("viernesMongo");
+db.universidad.insertOne(
+    {
+        nombre: "UNI",
+        carreras: ["Ing Mecanica", "Ing Electrica", "Ing Sanitaria"],
+        alumnos: 8000,
+        direccion: {
+            calle: "Av, Leon Velarde",
+            numero: 308,
+            distrito: "San Isidro",
+            region: "Lima"
+        },
+        presupuesto: 1000000
+    }
+);
+
+use("viernesMongo");
+db.universidad.find();
+
+use("viernesMongo")
+db.universidad.insertMany(
+    [
+        {
+            nombre: "UNMSM",
+            carreras: ["Ing Mecanica", "Derecho", "Psicologia"],
+            alumnos: 12000,
+            direccion: {
+                calle: "Av, Arequipa",
+                numero: 329,
+                distrito: "San Isidro",
+                region: "Lima"
+            },
+            presupuesto: 1500000
+        },
+        {
+            nombre: "PUCP",
+            carreras: ["Ing Mecanica", "Economia", "Teatro"],
+            alumnos: 10000,
+            direccion: {
+                calle: "Av, Vina del Mar",
+                numero: 333,
+                distrito: "Lince",
+                region: "Lima"
+            },
+            presupuesto: 2000000
+        },
+        {
+            nombre: "UNSA",
+            carreras: ["Ing Mecatronica", "Ing Sistemas", "Fisica"],
+            alumnos: 6000,
+            direccion: {
+                calle: "Av, Venezuela",
+                numero: 332,
+                distrito: "Arequipa",
+                region: "Arequpa"
+            },
+            presupuesto: 800000
+        },
+        {
+            nombre: "USIL",
+            carreras: ["Administracion", "Ing Industrial", "Ing Empresarial"],
+            alumnos: 7000,
+            direccion: {
+                calle: "Av, Leoncio Prado",
+                numero: 883,
+                distrito: "Surco",
+                region: "Lima"
+            },
+            presupuesto: 1200000
+        }
+    ]
+);
+
+use("viernesMongo");
+db.universidad.insertOne(
+    {
+        nombre: "UNSAAC",
+        carreras: ["Ing Mecanica", "Derecho", "Ing Civil", "Quechua"],
+        alumnos: 5000,
+        direccion: {
+            calle: "Av, Cusco",
+            numero: 299,
+            distrito: "San Lazaro",
+            region: "Cusco"
+        },
+        presupuesto: 600000
+    }
+);
