@@ -1,0 +1,92 @@
+
+
+use("db_schema")
+
+db.createCollection("usuarios",
+{
+    validator:
+    {
+        $jsonSchema:
+        {
+            bsonType: 'object',
+            properties:{
+                nombre:{
+                    bsonType: 'string'
+                },
+                password:{
+                    bsonType: 'string'
+                },
+                productos:{
+                    bsonType: 'array',
+                    items:
+                    {
+                        bsonType: 'object',
+                        properties:
+                        {
+                            nombre_producto:{
+                                bsonType: 'string'
+                            },
+                            cantidad:{
+                                bsonType: 'int'
+                            },
+                            precio:{
+                                bsonType: 'double'
+                            }
+                        }
+                    }
+                },
+                direcciones:{
+                    bsonType: 'array',
+                    items: {
+                        bsonType: 'object',
+                        properties:{
+                            calle: {
+                                bsonType: 'string'
+                            },
+                            numero_departamento:{
+                                bsonType: 'int'
+                            },
+                            distrito:{
+                                bsonType: 'string'
+                            },
+                            ciudad:{
+                                bsonType: 'string'
+                            },
+                            region: {
+                                bsonType: 'string'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+})
+
+use("db_schema")
+
+db.usuarios.insertOne(
+    {
+        nombre: "Jorge",
+        password: "1234",
+        productos:[
+            {
+                nombre_producto: "PC",
+                cantidad: 2,
+                precio: 12.3
+            }
+        ],
+        direcciones:[
+            {
+                calle: "Leoncio Prado",
+                numero_departamento: 12,
+                distrito: "San Miguel",
+                ciudad: "Arequipa",
+                region: "Arequipa"
+            }
+        ]
+    }
+)
+
+// calle, numero_departamento, distrito, ciudad, region

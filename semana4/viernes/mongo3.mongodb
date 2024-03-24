@@ -23,12 +23,143 @@ db.universidad.find(
     }
 );
 
-use("viernesMongo")
+use("viernesMongo");
 db.universidad.find(
     {
-        carreras:{
-            $gt:
+        carreras:
+        {
+            $elemMatch:
+            {
+                $eq: "Ing Mecanica"
+            }
         }
     }
 )
-// traer las universidades con mas de tres carreras size, gt
+
+// pull push
+
+use("viernesMongo");
+db.universidad.updateOne(
+    {
+        nombre: "UNMSM"
+    },
+    {
+        $push:{
+            carreras: "Ing Electrica"
+        }
+    }
+);
+
+use("viernesMongo");
+db.universidad.find(
+    {
+        nombre: "UNMSM"
+    }
+)
+
+use("viernesMongo");
+db.universidad.updateOne(
+    {
+        nombre: "UNMSM"
+    },
+    {
+        $pull: {
+            carreras: "Ing Electrica"
+        }
+    }
+)
+
+use("viernesMongo");
+db.universidad.updateMany(
+    {
+        alumnos:
+        {
+            $gte: 8000 
+        }
+    },
+    {
+        $set: {
+            presupuesto: 2000000
+        }
+    }
+)
+
+use("viernesMongo");
+db.universidad.updateMany(
+    {
+        alumnos:
+        {
+            $gte: 8000 
+        }
+    },
+    {
+        $set: {
+            profesores: 100
+        }
+    }
+);
+
+use("viernesMongo");
+db.universidad.find(
+    {
+        alumnos:
+        {
+            $gte: 8000 
+        }
+    }
+);
+
+use("viernesMongo");
+db.recibo.insertOne(
+    {
+        _id: 1,
+        nombre: "Jose",
+        apellido: "Perez",
+        fecha: new Date("12-10-2023")
+    }
+)
+
+use("viernesMongo");
+db.recibo.find();
+
+use("viernesMongo");
+db.recibo.insertMany(
+    [
+    {
+        _id: 2,
+        nombre: "Juan",
+        apellido: "Cervantes",
+        fecha: new Date("12-10-2022")
+    },
+    {
+        _id: 3,
+        nombre: "Pedro",
+        apellido: "Mejia",
+        fecha: new Date("12-12-2023")
+    },
+    {
+        _id: 1,
+        nombre: "Jose",
+        apellido: "Perez",
+        fecha: new Date("12-10-2023")
+    },
+    {
+        _id: 5,
+        nombre: "Miguel",
+        apellido: "Zegarra",
+        fecha: new Date("12-10-2020")
+    },
+    {
+        _id: 53,
+        nombre: 3,
+        apellido: "Zegarra",
+        fecha: new Date("12-10-2020")
+    },
+    ],
+    {
+        ordered: false
+    }
+)
+
+use("viernesMongo")
+db.recibo.find();

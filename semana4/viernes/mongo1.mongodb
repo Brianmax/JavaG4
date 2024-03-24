@@ -129,3 +129,24 @@ db.universidad.insertOne(
         presupuesto: 600000
     }
 );
+
+use("viernesMongo")
+db.universidad.insertOne(
+    {
+        nombre: "UPCH",
+        carreras: ["Medicina", "Ing Biotecnologia", "Enfermeria"],
+        alumnos: 10000,
+        direccion: {
+            calle: "Av, Alcides Carrion",
+            numero: 389,
+            distrito: "Miraflores",
+            region: "Lima"
+        },
+        presupuesto: 3000000,
+        investigaciones: 400
+    }
+)
+
+use("viernesMongo")
+db.universidad.find();
+

@@ -1,0 +1,28 @@
+use("sample_training")
+// traer los documentos agrupados por estado que contengan mas de 1 millon de habitantes
+db.zips.aggregate(
+    [
+        {
+            $group: {
+                _id: "$state",
+                totalPop:{
+                    $sum: "$pop"
+                }
+            }
+            
+        },
+        {
+            $match:
+            {
+                totalPop:{
+                    $gt: 10000000
+                }
+            }
+        },
+        {
+            $sort:{
+                totalPop: 1
+            }
+        }
+    ]
+)
