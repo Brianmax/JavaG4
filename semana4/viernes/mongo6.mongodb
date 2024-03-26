@@ -1,0 +1,243 @@
+use("sample_restaurants")
+
+db.restaurants.aggregate(
+    [
+        {
+            $match: {
+                borough: "Brooklyn"
+            }
+        },
+        {
+            $group: {
+              _id: expression,
+              fieldN: {
+                accumulatorN: expressionN
+              }
+            }
+        }
+    ]
+)
+use("sample_restaurants")
+db.restaurants.find(
+    {},
+    {
+        _id: 0,
+        borough: 1,
+        name: 1,
+        cuisine: 1   
+    }
+);
+
+use("sample_training")
+
+db.zips.aggregate(
+    [
+        {
+            $group: {
+              _id: "$state",
+              totalPop: {
+                $sum: "$pop"
+              }
+            }
+        },
+        {
+            $match: {
+              totalPop:{
+                $gt: 10000000
+              }
+            }
+        }
+    ]
+)
+use("sample_training")
+db.zips.find(
+    {},
+    {
+        _id: 0,
+        city: 1,
+        state: 1,
+        pop: 1
+    }
+)
+
+use("sample_restaurants")
+
+db.restaurants.aggregate(
+    [
+        {
+            $unwind: "$grades"
+        },
+        {
+            $group: {
+                // avg
+                _id: "$restaurant_id",
+                totalScore: {
+                    $sum: "$grades.score"
+                }
+            }
+        }
+    ]
+)
+
+use("sample_restaurants")
+
+db.restaurants.find(
+    {
+        restaurant_id: "41611875"
+    }
+)
+
+use("sample_training");
+db.zips.aggregate(
+    [
+        {
+            $group: {
+                _id: "$state",
+                totalPop: {
+                    $sum: "$pop"
+                }
+            }
+        },
+        {
+            $match: {
+                totalPop: {
+                    $gt: 5000000,
+                    $lt: 13000000
+                }
+            }
+        },
+        {
+            $sort: {
+              totalPop: -1
+            }
+        }
+    ]
+);
+
+
+use("sample_restaurants")
+
+db.restaurants.aggregate(
+    [
+        {
+            $unwind: "$grades"
+        },
+        {
+            $group: {
+                // avg
+                _id: "$restaurant_id",
+                avgScore: {
+                    $avg: "$grades.score"
+                }
+            }
+        },
+        {
+            $sort: {
+                avgScore: -1
+            }
+        }
+    ]
+)
+
+// restaurantes con maxima puntuacion por cada barrio
+
+use("sample_restaurants")
+db.restaurants.aggregate(
+    [
+        {
+            $unwind: "$grades"
+        },
+        {
+            $project: {
+                _id: 0,
+              name: 1,
+              borough: 1,
+              grades: 1,
+              restaurant_id: 1
+            }
+        },
+        {
+            $group: {
+                _id: {
+                    restaurant_id: "$restaurant_id",
+                    name: "$name",
+                    borough: "$borough"
+                },
+                maxScore: {
+                    $max : "$grades.score"
+                }
+            }
+        },
+        {
+            $sort:{
+                maxScore: -1
+            }
+        },
+        {
+            $group: {
+                _id: "$_id.borough",
+                restaurant: {
+                    $first: "$_id"
+                },
+                maxScore: {
+                    $first: "$maxScore"
+                }
+            }
+        },
+        {
+            $sort: {
+                maxScore: -1
+            }
+        }
+    ]
+)
+
+// consultar la ciudad mas grande y mas pequenia por estado
+
+use("sample_training")
+
+db.zips.aggregate(
+    [
+        {
+            $group:
+            {
+                _id: {
+                state: "$state",
+                city: "$city"
+                },
+                totalPop: {
+                    $sum: "$pop"
+                }
+            }
+        },
+        {
+            $sort: {
+                totalPop: -1
+            }
+        },
+        {
+            $group: {
+                _id: "$_id.state",
+                biggestCity:{
+                    $first: "$_id.city"
+                },
+                biggestPopulation: {
+                    $first: "$totalPop"
+                },
+                smallestCity:{
+                    $last: "$_id.city"
+                },
+                smallestPopulation:{
+                    $last: "$totalPop"
+                }
+            }
+        }
+    ]
+)
+
+use("sample_restaurants")
+db.restaurants.find(
+    {
+        restaurant_id: "40372466"
+    }
+)

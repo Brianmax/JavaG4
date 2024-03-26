@@ -1,0 +1,63 @@
+
+
+use("store")
+
+db.customers.insertOne(
+    {
+        "name": "Jorge",
+        "lastname": "Chavez",
+        "email": "jorge@gmail.com"
+    }
+)
+
+use("store")
+
+db.customers.insertOne(
+    {
+        "name": "Juan",
+        "lastname": "Chavez",
+        "email": "juan@gmail.com"
+    }
+)
+use("store")
+
+db.customers.insertOne(
+    {
+        "name": "Andres",
+        "lastname": "Chavez",
+        "email": "andres@gmail.com"
+    }
+)
+
+use("store")
+
+db.customers.find(
+
+)
+
+
+use("store")
+
+db.orders.insertOne(
+    {
+        order_number: "ORD-939",
+        cliente_id: new ObjectId("6602434f2f5ad04b47fde529"),
+        total: 499.44
+    }
+)
+use("store")
+db.orders.find();
+
+use("store")
+db.orders.aggregate(
+    [
+        {
+            $lookup: {
+              from: "customers",
+              localField: "cliente_id",
+              foreignField: "_id",
+              as: "customers"
+            }
+        }
+    ]
+)
